@@ -1,0 +1,64 @@
+{
+    "Module declaration": {
+        "prefix": "module",
+        "body": [
+            "module ${1:module.name};",
+            "$0"
+        ],
+        "description": "Insert module declaration"
+     },
+    "Role": {
+        "prefix": "role",
+        "body": [
+            "role ${1:r}$0"
+        ],
+        "description": "role"
+     },
+    "Global protocol": {
+        "prefix": "global",
+        "body": [
+            "global protocol ${1:name}(${2:roles}) {",
+            "$0",
+            "}"
+        ],
+        "description": "Global protocol definition"
+     },
+    "Global protocol (params)": {
+        "prefix": "global",
+        "body": [
+            "global protocol ${1:name}<${2:params}>(${3:roles}) {",
+            "$0",
+            "}"
+        ],
+        "description": "Global protocol with parameters definition"
+     },
+    "Rec": {
+        "prefix": "rec",
+        "body": [
+            "rec ${1:Label} {",
+            "\t$0",
+            "\tcontinue ${1:Label};",
+            "}"
+        ],
+        "description": "Recursive function definition"
+     },
+    "Choice": {
+        "prefix": "choice",
+        "body": [
+            "choice at ${1:name} {",
+            "\t$2",
+            "} or {",
+            "\t$3",
+            "}$0"
+        ],
+        "description": "Choice definition"
+     },
+    "Type import": {
+        "prefix": "type",
+        "body": [
+            "type <${1:lang}> \"${2:type}\" from \"${3:lang}\" as ${4:Type};",
+            "$0"
+        ],
+        "description": "Insert type import"
+     }
+}

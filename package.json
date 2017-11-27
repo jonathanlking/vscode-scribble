@@ -1,0 +1,32 @@
+{
+    "name": "scribble-language",
+    "displayName": "scribble-language",
+    "description": "Syntax support for the Scribble protocol language in Visual Studio Code.",
+    "version": "0.0.1",
+    "publisher": "jonathanlking",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "scribble",
+            "aliases": ["Scribble", "scribble"],
+            "extensions": [".scr"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "scribble",
+            "scopeName": "text.scribble",
+            "path": "./syntaxes/scribble.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+                "language": "scribble",
+                "path": "./snippets/scribble.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,48 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Scribble",
+	"patterns": [
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#module"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+			{
+				"name": "keyword.scribble",
+				"match": "\\b(import|type|protocol|global|local|explicit|aux|role|accept|self|sig|as|connect|disconnect|wrap|from|to|choice|at|or|rec|continue|and|do)\\b"
+			}
+		]
+		},
+		"module": {
+			"comment": "Module name",
+			"name": "entity.name.module",
+			"match": "^\\s*module\\s+(([a-zA-Z0-9_])+(\\.([a-zA-Z0-9_])+)*);",
+			"captures": {
+				"1": {
+					"comment": "Module identifier",
+					"name": "variable.language.scribble"
+				}
+			}
+		},
+		"strings": {
+			"name": "string.quoted.double.scribble",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.scribble",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "text.scribble"
+}
